@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoinFlip.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            
+            <Image
+                x:Name="FaceImage"
+                Source="cara_coroa.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Faces da moeda: Cara e Coroa." />
+
+            <Picker x:Name="FacePicker"
+                Title="Escolha a Face da Moeda!">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cara</x:String>
+                        <x:String>Coroa</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                x:Name="FlipButton"
+                Text="Girar a Moeda" 
+                SemanticProperties.Hint="Gira a Moeda e cai uma das Faces."
+                Clicked="FlipButton_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="Reset"
+                Text="Resetar" 
+                SemanticProperties.Hint="reseta as contagens"
+                Clicked="Resetar"
+                BackgroundColor="Red"
+                HorizontalOptions="Fill" />
+
+            <Label
+                x:Name="Total"
+                Text="Total de vitórias: 0"
+                
+                ></Label>
+
+            <Label
+                x:Name="Sequencia"
+                Text="Sequência de vitórias: 0"
+                
+                ></Label>
+
+            <Label
+                x:Name="Tentativas"
+                Text="Tentativas: 0"
+    
+                ></Label>   
+            
+            <Label
+                x:Name="Sm"
+                Text="Sequência máxima de vitórias: 0"
+    
+                ></Label>   
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
